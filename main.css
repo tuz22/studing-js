@@ -28,3 +28,11 @@ button {
 p {
   display: contents;
 }
+
+/* submenu */
+.list-group {
+  display: none;
+}
+.show {
+  display: block;
+}
