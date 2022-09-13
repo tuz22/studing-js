@@ -1,0 +1,30 @@
+body {
+  margin: 20px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: skyblue;
+  color: white;
+}
+.alert-box {
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: skyblue;
+  border-radius: 5px;
+  color: white;
+  display: none;
+}
+.alert-box button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background: white;
+  border: none;
+  font-weight: bold;
+  color: skyblue;
+  align-items: center;
+}
+p {
+  display: contents;
+}
