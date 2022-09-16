@@ -65,3 +65,12 @@ p {
   border-radius: 2px;
   padding: 100px 20pt;
 }
+
+/* darkmode */
+.badge {
+  float: right;
+}
+.dark {
+  background: black;
+  color: white;
+}
