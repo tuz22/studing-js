@@ -74,3 +74,8 @@ p {
   background: black;
   color: white;
 }
+
+/* 사은품 */
+.alert {
+  opacity: 0;
+}
