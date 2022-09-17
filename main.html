@@ -76,15 +76,19 @@
       document.querySelector('form').addEventListener('submit', function(e){
         let id = document.getElementById('idForm').value;
         let pw = document.getElementById('pwForm').value;
+        let idCheck = /^[a-z]+[a-z0-9]{5,9}$/g;
+        let pwCheck = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
 
         if (id == '') {
           alert('아이디를 입력하세요.');
           e.preventDefault();
+        } else if (idCheck.test(id)) {
+          alert('영문 또는 숫자 6 ~ 10자리를 입력해주세요.')
         } else if (pw == '') {
           alert('비밀번호를 입력하세요.');
           e.preventDefault();
-        } else if (pw.length < 6) {
-          alert('비밀번호는 6자 이상 입력하세요.');
+        } else if (pwCheck.test(pw)) {
+          alert('영문, 숫자, 특수문자를 최소 한가지씩 입력해주세요.');
           e.preventDefault();
         }
       })
