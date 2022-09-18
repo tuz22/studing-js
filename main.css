@@ -75,7 +75,21 @@ p {
   color: white;
 }
 
-/* 사은품 */
+/* 사은품 이벤트 베너*/
 .alert {
   opacity: 0;
+}
+
+/* 캐러셀 */
+.slide-container {
+  width: 300vw;
+  transition: all 1s;
+  /* transform: translateX(-100vw); */
+}
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100%;
 }
