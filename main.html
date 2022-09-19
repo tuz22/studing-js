@@ -11,75 +11,79 @@
     <title>classList</title>
   </head>
   <body class="">
-    <div class="badge bg-dark" id="darkmode">Dark 🔄</div><br>
+    <div class="barWrap">
+      <div class="bar"></div>
+    </div>
+    <div class="container">
+      <div class="badge bg-dark" id="darkmode">Dark 🔄</div><br>
 
-    <!-- 모달창 -->
-    <div class="black-bg">
-      <div class="white-bg">
-        <h4>로그인하세요</h4>
+      <!-- 모달창 -->
+      <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
 
-        <form action="success.html">
-          <div class="my-3">
-            <input type="text" class="form-control" id="idForm">
+          <form action="success.html">
+            <div class="my-3">
+              <input type="text" class="form-control" id="idForm">
+            </div>
+            <div class="my-3">
+              <input type="password" class="form-control" id="pwForm">
+            </div>
+            <button type="submit" class="btn btn-primary" id="send">전송</button>
+            <button type="button" class="btn btn-danger" id="close">닫기</button>
+          </form> 
+
+        </div>
+      </div>
+
+      <!-- navbar -->
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand">Shop</span>
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+      <!-- 메인 -->
+      <div class="main-box">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+          <button id="login" class="btn btn-danger">로그인</button>
+      </div>
+      <!-- 사은품 이벤트 베너 -->
+      <div class="alert alert-danger">
+        30,000원 이상 구매시 사은품 증정
+      </div> 
+      <!-- 캐러셀 -->
+      <div style="overflow: hidden;">
+        <div class="slide-container">
+          <div class="slide-box">
+            <img src="img/car1.png" alt="">
           </div>
-          <div class="my-3">
-            <input type="password" class="form-control" id="pwForm">
+          <div class="slide-box">
+            <img src="img/car2.png" alt="">
           </div>
-          <button type="submit" class="btn btn-primary" id="send">전송</button>
-          <button type="button" class="btn btn-danger" id="close">닫기</button>
-        </form> 
-
-      </div>
-    </div>
-
-    <!-- navbar -->
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand">Shop</span>
-        <button class="navbar-toggler" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul>
-    <!-- 메인 -->
-    <div class="main-box">
-      <h4>Lorem ipsum dolor sit amet.</h4>
-        <button id="login" class="btn btn-danger">로그인</button>
-    </div>
-    <!-- 사은품 이벤트 베너 -->
-    <div class="alert alert-danger">
-      30,000원 이상 구매시 사은품 증정
-    </div> 
-    <!-- 캐러셀 -->
-    <div style="overflow: hidden;">
-      <div class="slide-container">
-        <div class="slide-box">
-          <img src="img/car1.png" alt="">
-        </div>
-        <div class="slide-box">
-          <img src="img/car2.png" alt="">
-        </div>
-        <div class="slide-box">
-          <img src="img/car3.png" alt="">
+          <div class="slide-box">
+            <img src="img/car3.png" alt="">
+          </div>
         </div>
       </div>
-    </div>
-    <button class="slide-1">1</button>
-    <button class="slide-2">2</button>
-    <button class="slide-3">3</button>
-    <button class="next">></button>
+      <button class="slide-1">1</button>
+      <button class="slide-2">2</button>
+      <button class="slide-3">3</button>
+      <button class="next">></button>
 
-    <div class="terms">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit earum cum pariatur, natus fugiat similique perferendis perspiciatis ipsum vel eligendi cupiditate impedit expedita dolor veniam nulla enim nostrum molestias in.
+      <div class="terms">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit earum cum pariatur, natus fugiat similique perferendis perspiciatis ipsum vel eligendi cupiditate impedit expedita dolor veniam nulla enim nostrum molestias in.
+      </div>
     </div>
-
     <script>
       /* 네비게이션 */
       document.querySelector('.navbar-toggler').addEventListener('click', function(){
@@ -181,6 +185,15 @@
           document.querySelector('.navbar-brand').style.fontSize = 30 + 'px';
         }
       })
+
+      /* 스크롤 진척도 표시 */
+      window.addEventListener('scroll', function(){
+        let scrollTop = window.scrollY;
+        let scrollHeight = document.querySelector('html').scrollHeight - document.querySelector('html').clientHeight;
+        let progress = (scrollTop / scrollHeight) * 100;
+      
+        document.querySelector('.bar').style.width = progress + '%';
+      });
 
       window.scrollY // == document.querySelector('html').scrollTop; 현재 웹페이지 스크롤 양
       document.querySelector('html').scrollHeight; // 현재 웹페이지 실제 높이
