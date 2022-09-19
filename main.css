@@ -1,3 +1,7 @@
+:root {
+	scroll-behavior: auto;
+}
+
 body {
   margin: 20px;
 }
@@ -92,4 +96,20 @@ p {
 }
 .slide-box img {
   width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+.navbar-brand {
+  font-size: 30px;
+}
+
+/* 회원약관 */
+.terms {
+  width: 200px;
+  height: 100px;
+  overflow-y: scroll;
 }

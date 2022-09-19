@@ -35,7 +35,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand">Navbar</span>
+        <span class="navbar-brand">Shop</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -76,7 +76,9 @@
     <button class="slide-3">3</button>
     <button class="next">></button>
 
-
+    <div class="terms">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit earum cum pariatur, natus fugiat similique perferendis perspiciatis ipsum vel eligendi cupiditate impedit expedita dolor veniam nulla enim nostrum molestias in.
+    </div>
 
     <script>
       /* 네비게이션 */
@@ -158,8 +160,23 @@
         currentImg += 1;
         console.log(currentImg);
         if (currentImg == 3) {currentImg = 0};
-        
       })
+
+      /* 스크롤 이벤트 */
+      window.scrollY; // 사용자가 내린 스크롤 양
+      window.pageYOffset // scrollY와 같음
+      window.scrollTo(x, y) // x,y 위치로 강제 스크롤(스크롤바 고정)
+      window.scrollBy(x, y) // 현재위치에서 x,y만큼 이동
+      
+      document.querySelector('.terms').addEventListener('scroll', function(){
+        let scroll = document.querySelector('.terms').scrollTop; // 위에서 내린 양
+        let height = document.querySelector('.terms').scrollHeight; // 실제 높이
+
+        // div박스의 스크롤바 높이 == div박스의 스크롤바를 내린 양 + div박스 높이
+        console.log(scroll, height);
+      });
+
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
