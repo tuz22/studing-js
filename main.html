@@ -90,14 +90,32 @@
         document.querySelectorAll('.list-group')[0].classList.toggle('show');
       })
 
-      /* 모듈 창 */
+      /* 모달 창 */
+      let blackBg = document.querySelector('.black-bg');
       document.querySelector('#login').addEventListener('click', function(){
-        document.querySelectorAll('.black-bg')[0].classList.add('show-modal');
+        blackBg.classList.add('show-modal');
       })
 
       document.querySelector('#close').addEventListener('click', function(){
-        document.querySelector('.black-bg').classList.remove('show-modal');
+        blackBg.classList.remove('show-modal');
       })
+      
+      /* 이벤트 관련 함수들 */
+      blackBg.addEventListener('click', function(e){
+
+        // e.target; // 사용자가 실제로 클릭한 것
+        // e.currentTarget; // 이벤트리스너가 달린 곳 == this;
+        // e.preventDefault; // 이벤트의 기본동작을 막아줌 ex) 클릭 안된 것처럼
+        // e.stopPropagation(); // 내 상위요소로 이벤트 버블링을 막아줌
+
+        console.log("e:"+e.target);
+        console.log(blackBg);
+
+        if (e.target == blackBg) {
+          blackBg.classList.remove('show-modal');
+        }
+        
+      });
 
       /* 로그인 및 유효성체크 */
       document.querySelector('form').addEventListener('submit', function(e){
