@@ -36,7 +36,11 @@ fruit.slice(1,2); // 자료 자르기
 console.log(fruit.slice(0,2));
 
 /* object 자료형: key(이름)로 저장 */
-let fruit2 = {name : '사과', price : 3000}; // key : value 형태
+let fruit2 = { name : '사과', price : 3000 }; // key : value 형태
 fruit2.name = '체리'; // 자료 수정
 console.log(fruit2)
-console.log(fruit2.name)
+console.log(fruit2.name) // fruit2['name']
+
+let fruit3 = { name: '바나나', price : [1000, 2000, 3000] }
+document.querySelector('.fruit-price').innerHTML = fruit3.price[2];
+console.log(fruit3.price[2]);
