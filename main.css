@@ -170,3 +170,8 @@ ul.list::after {
 .show {
   display: block;
 }
+
+/* 상품 select */
+.form-hide {
+  display: none;
+}

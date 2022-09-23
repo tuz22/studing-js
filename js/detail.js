@@ -44,3 +44,15 @@ console.log(fruit2.name) // fruit2['name']
 let fruit3 = { name: '바나나', price : [1000, 2000, 3000] }
 document.querySelector('.fruit-price').innerHTML = fruit3.price[2];
 console.log(fruit3.price[2]);
+
+/* 상품 select */
+document.getElementsByClassName('form-select')[0].addEventListener('input', function(e){
+  // let select = document.getElementsByClassName('form-select')[0].value;
+  let select = e.currentTarget.value; // == this.value;
+  if (select == '셔츠') {
+    document.getElementsByClassName('form-select')[1].classList.remove('form-hide');
+  } else {
+    document.getElementsByClassName('form-select')[1].classList.add('form-hide');
+  }
+});
+
