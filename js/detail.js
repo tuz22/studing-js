@@ -79,3 +79,8 @@ document.getElementsByClassName('form-select')[0].addEventListener('input', func
 // 변경방법
 // document.querySelector('#test').innerHTML = b;
 
+let obj = { name: 'yoon', age: 15 };
+for (let key in obj){ // obj안에 든 key 갯수만큼 반복
+  console.log(key); // name; age;
+  console.log(obj[key]); // yoon; 15;
+}
