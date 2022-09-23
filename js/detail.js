@@ -46,17 +46,22 @@ document.querySelector('.fruit-price').innerHTML = fruit3.price[2];
 console.log(fruit3.price[2]);
 
 /* 상품 select - 사이즈 */
+let size = [28, 29, 30, 31];
+
 document.getElementsByClassName('form-select')[0].addEventListener('input', function(e){
-  // let select = document.getElementsByClassName('form-select')[0].value;
   let select = e.currentTarget.value; // == this.value;
+  
   if (select == '셔츠') {
     document.getElementsByClassName('form-select')[1].classList.remove('form-hide');
   } else if (select == '바지'){
     document.getElementsByClassName('form-select')[1].classList.remove('form-hide');
+    document.getElementsByClassName('form-select')[1].innerHTML = '';
 
-    let size = `<option>28</option><br><option>29</option>`;
-    document.querySelectorAll('.form-select')[1].innerHTML = size;
-
+    size.forEach(function(data){
+      const option = document.createElement('option');
+      option.innerHTML = `<option>${data}</option>`;
+      document.querySelectorAll('.form-select')[1].appendChild(option);
+    })
   } else {
     document.getElementsByClassName('form-select')[1].classList.add('form-hide');
   }
