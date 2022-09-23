@@ -45,14 +45,32 @@ let fruit3 = { name: '바나나', price : [1000, 2000, 3000] }
 document.querySelector('.fruit-price').innerHTML = fruit3.price[2];
 console.log(fruit3.price[2]);
 
-/* 상품 select */
+/* 상품 select - 사이즈 */
 document.getElementsByClassName('form-select')[0].addEventListener('input', function(e){
   // let select = document.getElementsByClassName('form-select')[0].value;
   let select = e.currentTarget.value; // == this.value;
   if (select == '셔츠') {
     document.getElementsByClassName('form-select')[1].classList.remove('form-hide');
+  } else if (select == '바지'){
+    document.getElementsByClassName('form-select')[1].classList.remove('form-hide');
+
+    let size = `<option>28</option><br><option>29</option>`;
+    document.querySelectorAll('.form-select')[1].innerHTML = size;
+
   } else {
     document.getElementsByClassName('form-select')[1].classList.add('form-hide');
   }
 });
+
+/* js로 html 생성 */
+// // 추가방법
+// let a = document.createElement('p');
+// a.innerHTML = 'a:안녕';
+// document.querySelector('#test').appendChild(a);
+
+// let b = '<p>b:안녕</p>';
+// document.querySelector('#test').insertAdjacentHTML('beforeend', b);
+
+// 변경방법
+// document.querySelector('#test').innerHTML = b;
 
