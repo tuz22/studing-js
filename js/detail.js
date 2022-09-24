@@ -94,14 +94,14 @@ $.get('https://codingapple1.github.io/price.json')
   })
 
 // 바닐라 자바스크립트로 ajax 요청
-fetch('https://codingapple1.github.io/price.json')
-  .then(res => res.json()) // json을 object로 변환
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.log(error);
-  })
+// fetch('https://codingapple1.github.io/price.json')
+//   .then(res => res.json()) // json을 object로 변환
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   })
 
 // $.post('https://codingapple1.github.io/hello.txt', {name :'kim'})
 // .done(function(data){
