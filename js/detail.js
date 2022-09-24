@@ -84,3 +84,26 @@ for (let key in obj){ // obj안에 든 key 갯수만큼 반복
   console.log(key); // name; age;
   console.log(obj[key]); // yoon; 15;
 }
+
+$.get('https://codingapple1.github.io/price.json')
+  .done(function(data){
+    console.log(data.price);
+  })
+  .fail(function(){
+    console.log('실패');
+  })
+
+// 바닐라 자바스크립트로 ajax 요청
+fetch('https://codingapple1.github.io/price.json')
+  .then(res => res.json()) // json을 object로 변환
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.log(error);
+  })
+
+// $.post('https://codingapple1.github.io/hello.txt', {name :'kim'})
+// .done(function(data){
+//   console.log(data);
+// })
