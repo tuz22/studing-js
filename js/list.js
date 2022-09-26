@@ -115,3 +115,22 @@ document.getElementById('name').addEventListener('click', function(){
 
 });
 
+/* 가격 필터 */
+document.getElementById('discount').addEventListener('click', function(){
+  let oman = products.filter(function(a){
+    return a.price <= 50000
+  });
+  console.log(oman);
+
+  div.innerHTML = '';
+  oman.forEach(function(data, i){
+    let template = 
+          `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${oman[i].title}</h5>
+            <p>가격 : ${oman[i].price}</p>
+          </div>`;
+    div.insertAdjacentHTML('beforeend',template);
+  });
+});
+
