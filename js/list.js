@@ -69,7 +69,39 @@ document.getElementById('price').addEventListener('click', function(){
   });
 
   div.innerHTML = '';
+  products.forEach(function(data, i){
+    let template = 
+          `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${products[i].title}</h5>
+            <p>가격 : ${products[i].price}</p>
+          </div>`;
+    div.insertAdjacentHTML('beforeend',template);
+  });
+});
 
+/* 문자의 오름차순 정렬 */
+let stringArray = ['가', '다', '나'];
+
+stringArray.sort(function(a, b){
+  if (a < b) {
+    return -1
+  } else {
+    return 1
+  }
+});
+
+/* 상품 이름순 정렬 */
+document.getElementById('name').addEventListener('click', function(){
+  products.sort(function(a, b){
+    if (a.title < b.title) {
+      return -1
+    } else {
+      return 1
+    }
+  });
+
+  div.innerHTML = '';
   products.forEach(function(data, i){
     let template = 
           `<div class="col-sm-4">
@@ -80,4 +112,6 @@ document.getElementById('price').addEventListener('click', function(){
     div.insertAdjacentHTML('beforeend',template);
     console.log(template);
   });
+
 });
+
