@@ -13,9 +13,11 @@ products.forEach(function(data, i){
             <img src="https://via.placeholder.com/600" class="w-100">
             <h5>${data.title}</h5>
             <p>가격 : ${products[i].price}</p>
+            <button class="buy">구매</button>
           </div>`;
   div.insertAdjacentHTML('beforeend', template);
 });
+cart();
 
 /* 더보기 버튼 */
 let clickCount = 1;
@@ -75,7 +77,6 @@ document.getElementById('price').addEventListener('click', function(){
             <img src="https://via.placeholder.com/600" class="w-100">
             <h5>${products[i].title}</h5>
             <p>가격 : ${products[i].price}</p>
-            <button class="buy">구매</button>
           </div>`;
     div.insertAdjacentHTML('beforeend',template);
   });
@@ -152,4 +153,36 @@ console.log(JSON.parse(getArr)[0]);
 // localStorage 데이터 수정
 // 자료 꺼냄 -> 꺼낸거 수정 -> 자료 다시 넣음
 
+/* 장바구니 */
+
+// jQuery
+// $('.buy').click(function(e){
+//   let title = $(e.target).siblings('h5').text(); // 타겟의 자식태그(h5)의 text
+
+//   if(localStorage.getItem('cart') != null) {
+//     let getCart = JSON.parse(localStorage.cart); // == localStorage.getItem('cart');
+//     getCart.push(title); // getCart에 title 추가 (= 배열에 값 추가)
+//     localStorage.setItem('cart',JSON.stringify(getCart)); // 값 추가된 배열 localStorage에 저장
+//   } else {
+//     localStorage.setItem('cart',JSON.stringify([title]));
+//   }
+// });
+
+// Javascript
+function cart(){
+  products.forEach(function(data, i){ // products = 상품데이터
+
+    document.getElementsByClassName('buy')[data.id].addEventListener('click', function(e){
+      let title = e.target.previousElementSibling.previousElementSibling.innerHTML;
+
+      if (localStorage.getItem('cart') != null) {
+        let getCart = JSON.parse(localStorage.cart);
+        getCart.push(title);
+        localStorage.setItem('cart', JSON.stringify(getCart));
+      } else {
+        localStorage.setItem('cart', JSON.stringify([title]));
+      }
+    });
+  });
+}
 
