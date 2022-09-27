@@ -75,6 +75,7 @@ document.getElementById('price').addEventListener('click', function(){
             <img src="https://via.placeholder.com/600" class="w-100">
             <h5>${products[i].title}</h5>
             <p>가격 : ${products[i].price}</p>
+            <button class="buy">구매</button>
           </div>`;
     div.insertAdjacentHTML('beforeend',template);
   });
@@ -133,4 +134,22 @@ document.getElementById('discount').addEventListener('click', function(){
     div.insertAdjacentHTML('beforeend',template);
   });
 });
+
+/* 브라우저 localStorage 사용 */
+localStorage.setItem('이름', 'kim') // 정보 저장
+localStorage.getItem('이름') // 정보 가져오기
+localStorage.removeItem('이름') // 정보 삭제
+
+localStorage.setItem('numb', [1, 2, 3]); // array를 강제로 문자로 변환 -> ('numb', '1, 2, 3')
+
+// array를 깨지지 않고 저장하는 방법: array/object -> JSON
+let arr = [1, 2, 3];
+let newArr = JSON.stringify(arr);
+localStorage.setItem('numb', newArr);
+let getArr = localStorage.getItem('numb'); // 깨지진 않았지만 문자형임. 다시 변경 JSON -> array/object
+console.log(JSON.parse(getArr)[0]);
+
+// localStorage 데이터 수정
+// 자료 꺼냄 -> 꺼낸거 수정 -> 자료 다시 넣음
+
 
