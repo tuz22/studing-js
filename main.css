@@ -175,3 +175,20 @@ ul.list::after {
 .form-hide {
   display: none;
 }
+
+/* sticky-page */
+.grey {
+  background: lightgray;
+  height: 2000px;
+  margin-top: 500px;
+}
+.image {
+  float: right;
+  width: 400px;
+  top: 100px;
+  position: sticky;
+}
+.content {
+  float: left;
+  width: 400px;
+}
