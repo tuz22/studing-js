@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch</title>
+</head>
+<body>
+  <div id="quiz">
+    <h2>편의점에 가면 뭐부터 살까</h2>
+    <button>팝콘</button>
+    <button>콜라</button>
+    <button>컵라면</button>
+  </div>
+</body>
+<script>
+  document.querySelector('#quiz').addEventListener('click', function(e){
+    switch (e.target.innerHTML) {
+      case '팝콘':
+      alert('팝콘이 최고지');
+      break;
+      case '콜라':
+      alert('콜라 그만 마셔');
+      break;
+      case '컵라면':
+      alert('컵라면은 좋아');
+      break;
+    }
+  });
+
+  /* switch문 */
+  // let a = 1 + 2;
+  // switch (a){
+  //   case 1:
+  //     alert('a는 1');
+  //     break;
+  //   case 2:
+  //     alert('a는 2');
+  //     break;
+  //   case 3:
+  //     alert('a는 3');
+  //     break;
+  //   case 4:
+  //     alert('a는 4');
+  //     break;
+  //   default:
+  //     alert('해당되는 것이 없음');
+  // }
+</script>
+</html>
